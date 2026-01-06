@@ -1,0 +1,174 @@
+
+// BODY STYLING
+document.body.style.margin = "0";
+document.body.style.padding = "0";
+document.body.style.backgroundColor = "#fde7e2";
+document.body.style.fontFamily = "Times New Roman, serif";
+
+// STYLE TAG
+const style = document.createElement("style");
+style.textContent = `
+.container {
+    width: 800px;
+    margin: 30px auto;
+}
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+label {
+    width: 200px;
+    font-size: 20px;
+}
+input, textarea, select {
+    padding: 6px;
+    font-size: 16px;
+}
+.text {
+    width: 400px;
+}
+.small {
+    width: 80px;
+}
+.name {
+    width: 190px;
+}
+textarea {
+    height: 90px;
+    resize: none;
+}
+.center {
+    justify-content: center;
+}
+button {
+    padding: 6px 18px;
+    font-size: 16px;
+}
+`;
+document.head.appendChild(style);
+
+// CONTAINER
+const container = document.createElement("div");
+container.className = "container";
+
+// TITLE
+const title = document.createElement("h1");
+title.textContent = "Student Registration Form";
+container.appendChild(title);
+
+// FORM
+const form = document.createElement("form");
+
+// UTILITY FUNCTION
+function createRow(labelText, ...elements) {
+    const row = document.createElement("div");
+    row.className = "row";
+
+    const label = document.createElement("label");
+    label.textContent = labelText;
+    row.appendChild(label);
+
+    elements.forEach(el => row.appendChild(el));
+    return row;
+}
+
+// INPUT HELPERS
+const input = (type, cls = "text") => {
+    const i = document.createElement("input");
+    i.type = type;
+    i.className = cls;
+    return i;
+};
+
+// ROLL NO
+form.appendChild(createRow("Roll no. :", input("text")));
+
+// STUDENT NAME
+const fname = input("text", "name"); fname.placeholder = "First Name";
+const lname = input("text", "name"); lname.placeholder = "Last Name";
+form.appendChild(createRow("Student name :", fname, document.createTextNode(" - "), lname));
+
+// FATHER NAME
+form.appendChild(createRow("Father's name :", input("text")));
+
+// DOB
+const day = input("text", "small"); day.placeholder = "Day";
+const month = input("text", "small"); month.placeholder = "Month";
+const year = input("text", "small"); year.placeholder = "Year";
+form.appendChild(createRow(
+    "Date of birth :",
+    day, document.createTextNode(" - "),
+    month, document.createTextNode(" - "),
+    year, document.createTextNode(" (DD-MM-YYYY)")
+));
+
+// MOBILE
+const mobile = input("text");
+mobile.maxLength = 10;
+form.appendChild(createRow("Mobile no. :", document.createTextNode("+91 - "), mobile));
+
+// EMAIL
+form.appendChild(createRow("Email id :", input("email")));
+
+// PASSWORD
+form.appendChild(createRow("Password :", input("password")));
+
+// GENDER
+const male = input("radio"); male.name = "gender";
+const female = input("radio"); female.name = "gender";
+form.appendChild(createRow(
+    "Gender :",
+    male, document.createTextNode(" Male "),
+    female, document.createTextNode(" Female")
+));
+
+// DEPARTMENT
+["CSE", "IT", "ECE", "Civil", "Mech"].forEach(dep => {
+    const chk = input("checkbox");
+    form.appendChild(createRow("Department :", chk, document.createTextNode(" " + dep)));
+    return;
+});
+
+// COURSE
+const select = document.createElement("select");
+["Select Current Course's", "B.Tech", "M.Tech", "Diploma", "B.Sc"].forEach(c => {
+    const opt = document.createElement("option");
+    opt.textContent = c;
+    select.appendChild(opt);
+});
+form.appendChild(createRow("Course :", select));
+
+// PHOTO
+form.appendChild(createRow("Student photo :", input("file")));
+
+// CITY
+form.appendChild(createRow("City :", input("text")));
+
+// ADDRESS
+const address = document.createElement("textarea");
+address.className = "text";
+form.appendChild(createRow("Address :", address));
+
+// BUTTON
+const btnRow = document.createElement("div");
+btnRow.className = "row center";
+const btn = document.createElement("button");
+btn.textContent = "Register";
+btnRow.appendChild(btn);
+form.appendChild(btnRow);
+
+// SUBMIT
+form.onsubmit = e => {
+    e.preventDefault();
+    alert("Registration Successful");
+    form.reset();
+};
+
+container.appendChild(form);
+document.body.appendChild(container);

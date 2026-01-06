@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Banking</title>
+    <script>
+var pin = parseInt(prompt("Enter the pin: "));
+
+function bank(pin) {
+    if (pin == 1234) {
+        var balance = 999999;
+        var running = true;
+
+        while (running) {
+            var opt = parseInt(prompt("====Imaadh ATM Center====\nEnter the option:\n1.Withdraw\n2.Deposit\n3.Balance\n4.Exit"));
+            
+            switch (opt) {
+                case 1:
+                    var withdraw = parseInt(prompt("Enter withdraw Amount: "));
+                    if (withdraw <= balance) {
+                        balance -= withdraw;
+                        alert("Take the cash ₹" + withdraw + "\nCurrent balance: " + balance);
+                    } else {
+                        alert("Insufficient Balance");
+                    }
+                    break;
+                case 2:
+                    var depositamt = parseInt(prompt("Enter deposit Amount: "));
+                    if (depositamt > 0) {
+                        balance += depositamt;
+                        alert("Amount Deposited ₹" + depositamt + "\nCurrent balance: " + balance);
+                    } else {
+                        alert("Enter a valid number");
+                    }
+                    break;
+                case 3:
+                    alert("Your current balance: " + balance);
+                    break;
+                case 4:
+                    running = false;
+                    break;
+                default:
+                    alert("Invalid Option");
+                    running = false;
+                    break;
+            }
+        }
+    } else {
+        var retryPin = parseInt(prompt("Incorrect PIN. Please try again: "));
+        bank(retryPin);
+    }
+}
+bank(pin);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

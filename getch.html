@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fde7e2;
+            font-family: "Times New Roman", serif;
+        }
+
+        .container {
+            width: 800px;
+            margin: 30px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .row label {
+            width: 200px;
+            font-size: 20px;
+        }
+
+        .row input[type="text"],
+        .row input[type="email"],
+        .row input[type="password"],
+        .row textarea,
+        .row select {
+            width: 400px;
+            padding: 6px;
+            font-size: 16px;
+        }
+
+        .row textarea {
+            height: 90px;
+            resize: none;
+        }
+
+        .name-group input {
+            width: 190px;
+        }
+
+        .dob-group input {
+            width: 80px;
+            margin-right: 8px;
+        }
+
+        .mobile-group span {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .gender-group input,
+        .dept-group input {
+            margin-right: 6px;
+        }
+
+        .dept-group label {
+            margin-right: 20px;
+            width: auto;
+        }
+
+        .row input[type="file"] {
+            font-size: 14px;
+        }
+
+        .submit-row {
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 6px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <h1>Student Registration Form</h1>
+
+    <form id="regForm">
+
+        <div class="row">
+            <label>Roll no. :</label>
+            <input type="text" required>
+        </div>
+
+        <div class="row name-group">
+            <label>Student name :</label>
+            <input type="text" placeholder="First Name" required>
+            <span style="margin:0 8px;">-</span>
+            <input type="text" placeholder="Last Name" required>
+        </div>
+
+        <div class="row">
+            <label>Father's name :</label>
+            <input type="text" required>
+        </div>
+
+        <div class="row dob-group">
+            <label>Date of birth :</label>
+            <input type="text" placeholder="Day" required>
+            <span>-</span>
+            <input type="text" placeholder="Month" required>
+            <span>-</span>
+            <input type="text" placeholder="Year" required>
+            <span style="margin-left:10px;">(DD-MM-YYYY)</span>
+        </div>
+
+        <div class="row mobile-group">
+            <label>Mobile no. :</label>
+            <span>+91</span>
+            <input type="text" maxlength="10" required>
+        </div>
+
+        <div class="row">
+            <label>Email id :</label>
+            <input type="email" required>
+        </div>
+
+        <div class="row">
+            <label>Password :</label>
+            <input type="password" required>
+        </div>
+
+        <div class="row gender-group">
+            <label>Gender :</label>
+            <input type="radio" name="gender" required> Male
+            <input type="radio" name="gender"> Female
+        </div>
+
+        <div class="row dept-group">
+            <label>Department :</label>
+            <label><input type="checkbox"> CSE</label>
+            <label><input type="checkbox"> IT</label>
+            <label><input type="checkbox"> ECE</label>
+            <label><input type="checkbox"> Civil</label>
+            <label><input type="checkbox"> Mech</label>
+        </div>
+
+        <div class="row">
+            <label>Course :</label>
+            <select required>
+                <option value="">---------------- Select Current Course's ----------------</option>
+                <option>B.Tech</option>
+                <option>M.Tech</option>
+                <option>Diploma</option>
+                <option>B.Sc</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label>Student photo :</label>
+            <input type="file" accept="image/*" required>
+        </div>
+
+        <div class="row">
+            <label>City :</label>
+            <input type="text" required>
+        </div>
+
+        <div class="row">
+            <label>Address :</label>
+            <textarea required></textarea>
+        </div>
+
+        <div class="row submit-row">
+            <button type="submit">Register</button>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    document.getElementById("regForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Registration Successful");
+        this.reset();
+    });
+</script>
+
+</body>
+</html>

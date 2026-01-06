@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Banking</title>
+    <script>
+  var balance = 999999;
+  function bank(pin) {
+    var usrnme = prompt("Enter the usrnme: ");
+    var pin = parseInt(prompt("Enter the pin: "));
+    if (usrnme=="Admin" && pin == 1234) {
+        var choice = "yes";
+        var running = true;
+        while (running) {
+            var opt = parseInt(prompt("====Imaadh ATM Center====\nEnter the option:\n1.Withdraw\n2.Deposit\n3.Balance\n4.Exit"));
+            
+            switch (opt) {
+                case 1:
+    var withdraw = parseInt(prompt("Enter withdraw Amount: "));
+    
+    if (withdraw <= balance && withdraw % 100 == 0) {
+        var temp = withdraw;
+
+        // Calculate counts for each note denomination
+        var notes500 = Math.floor(temp / 500);
+        temp %= 500; // Remainder after taking 500s
+
+        var notes200 = Math.floor(temp / 200);
+        temp %= 200; // Remainder after taking 200s
+
+        var notes100 = Math.floor(temp / 100);
+
+        // Print the breakdown
+        var result = "Dispensing Cash:\n";
+        if (notes500 > 0) result += "500 notes: " + notes500 + "\n";
+        if (notes200 > 0) result += "200 notes: " + notes200 + "\n";
+        if (notes100 > 0) result += "100 notes: " + notes100 + "\n";
+
+        alert(result);
+        
+        balance -= withdraw;
+        alert("Take your ₹" + withdraw + "\nCurrent balance: " + balance);
+    } else if (withdraw % 100 != 0) {
+        alert("Invalid amount. Please enter multiples of 100.");
+    } else {
+        alert("Insufficient Balance");
+    }
+    break;
+                case 2:
+                    var depositamt = parseInt(prompt("Enter deposit Amount: "));
+                    if (depositamt > 0 && depositamt%100 == 0) {
+                        balance += depositamt;
+                        alert("Amount Deposited ₹" + depositamt + "\nCurrent balance: " + balance);
+                    } else if (depositamt%100 != 0){
+                        alert(depositamt%100 +" cannot be deposited, as only 100/- and it's multiple notes are accepted. Operation Cancelled");
+                    } else {
+                        alert("Enter a valid number");
+                    }
+                    break;
+                case 3:
+                    alert("Your current balance: " + balance);
+                    break;
+                case 4:
+                    running = false;
+                    break;
+                default:
+                    alert("Invalid Option");
+                    running = false;
+                    break;
+            }
+                    running = confirm("Do you want to continue?");
+                    if (!running) break; 
+                }
+            } else {
+                var retry = confirm("Incorrect PIN. Try again?");
+                if (retry) bank(); // Restart function for PIN entry
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2 align='center'>====IMAADH BANKS ADDA===</h2>
+    <div align='center'>
+    <button style="height:50px; width:100px; background-color:blue; color:white;" onclick='bank()'>Start ATM</button>
+    </div>
+</body>
+</html>

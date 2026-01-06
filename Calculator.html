@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <script>
+            
+        function add(a, b) {
+            alert(a + b);
+        }
+
+        function diff(a, b) {
+            alert(a - b);
+        }
+
+        function mul(a, b) {
+            alert(a * b);
+        }
+
+        function div(a, b) {
+            alert(a / b);
+        }
+    </script>
+</head>
+<body align="center" style="background-color:orange;">
+    <h2 align ="center">Welcome to Calculator</h2>
+    Enter first number: &nbsp &nbsp &nbsp <input type="number" id="a">
+    <br><br>
+    Enter second number: <input type="number" id="b" >
+    <br><br>
+    <button onclick="add(Number(a.value), Number(b.value))">Add</button>
+    <button onclick="diff(Number(a.value), Number(b.value))">Subtract</button>
+    <button onclick="mul(Number(a.value), Number(b.value))">Multiply</button>
+    <button onclick="div(Number(a.value), Number(b.value))">Divide</button>
+</body>
+</html>

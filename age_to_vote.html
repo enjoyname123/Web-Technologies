@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page title</title>
+    <script>
+        var count = 0;
+        var num = Number(prompt("Enter a number:"));
+        function isPrime(num) {
+        if (num == 1)
+            alert("Neither Prime nor composite");
+          for (i = 2; i <= num-1 ; i++) {
+            if (num % i === 0) 
+            count ++;
+          }
+        }
+        isPrime(num);
+                if (count == 0 && num != 1)
+            alert("Prime");
+        else if (num != 1)
+            alert("Composite");
+    </script>
+</head>
+<body>
+</body>
+</html>

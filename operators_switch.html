@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Operations</title>
+    <script>
+        var opr1 = parseInt(prompt("Enter the first number: "));
+        var opr2 = parseInt(prompt("Enter the second number: "));
+        function f() {
+        var opt = prompt("Enter the operatios you want to perform: ");
+        switch (opt) {
+            case '+':
+                var opr = opr1 + opr2;
+                alert("Sum of the given 2 numbers is "+ opr);
+                break;
+            case '-':
+                var opr = opr1 - opr2;
+                alert("Difference between the given 2 numbers is "+ opr);
+                break;
+            case '*':
+                var opr = opr1 * opr2;
+                alert("Multiplcation of the given 2 numbers is "+ opr);
+                break;
+            case '/':
+                var opr = opr1 / opr2;
+                alert("Division of the given 2 numbers is "+ opr);
+                break;
+                default:
+                    alert("Enter valid option");
+                    f();
+        }
+      }
+      f();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
