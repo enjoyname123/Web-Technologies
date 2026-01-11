@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Complete Demo – ECET Oriented</title>
+
+    <!-- ================= INTERNAL CSS ================= -->
+    <style>
+        /* -------------------------------------------------
+           1. CSS SELECTORS
+        ------------------------------------------------- */
+
+        /* Element Selector */
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ID Selector */
+        #main-title {
+            color: darkblue;
+            text-align: center;
+        }
+
+        /* Class Selector */
+        .section {
+            background-color: white;
+            margin: 15px;
+            padding: 15px;
+            border: 2px solid black;
+        }
+
+        /* Group Selector */
+        h2, h3 {
+            color: brown;
+        }
+
+        /* Universal Selector */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* -------------------------------------------------
+           2. TEXT & FONT PROPERTIES
+        ------------------------------------------------- */
+        .text-demo {
+            color: green;
+            text-align: justify;
+            text-decoration: underline;
+            text-transform: capitalize;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            word-spacing: 4px;
+        }
+
+        /* -------------------------------------------------
+           3. FONT PROPERTIES
+        ------------------------------------------------- */
+        .font-demo {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            font-family: "Times New Roman";
+        }
+
+        /* -------------------------------------------------
+           4. BOX MODEL
+           (margin, border, padding, content)
+        ------------------------------------------------- */
+        .box-model {
+            width: 300px;
+            padding: 15px;
+            border: 5px solid red;
+            margin: 20px;
+            background-color: lightyellow;
+        }
+
+        /* -------------------------------------------------
+           5. BACKGROUND PROPERTIES
+        ------------------------------------------------- */
+        .background-demo {
+            background-color: lightblue;
+            background-image: linear-gradient(to right, lightblue, lightgreen);
+            padding: 20px;
+        }
+
+        /* -------------------------------------------------
+           6. BORDER PROPERTIES
+        ------------------------------------------------- */
+        .border-demo {
+            border: 4px dashed purple;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* -------------------------------------------------
+           7. DISPLAY & VISIBILITY
+        ------------------------------------------------- */
+        .display-demo span {
+            display: block;
+            background-color: #ddd;
+            margin: 5px;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        /* -------------------------------------------------
+           8. POSITIONING
+        ------------------------------------------------- */
+        .position-box {
+            position: relative;
+            height: 120px;
+            background-color: #eee;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: orange;
+            padding: 10px;
+        }
+
+        /* -------------------------------------------------
+           9. FLOAT & CLEAR
+        ------------------------------------------------- */
+        .float-left {
+            float: left;
+            width: 100px;
+            height: 80px;
+            background-color: pink;
+            margin-right: 10px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        /* -------------------------------------------------
+           10. LINK STATES (Pseudo-classes)
+        ------------------------------------------------- */
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            color: green;
+        }
+
+        /* -------------------------------------------------
+           11. LIST & TABLE STYLING
+        ------------------------------------------------- */
+        ul {
+            list-style-type: square;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 id="main-title">CSS COMPLETE DEMO (ECET ORIENTED)</h1>
+
+<div class="section">
+    <h2>1. Text Properties</h2>
+    <p class="text-demo">
+        this paragraph demonstrates css text properties for ecet exam
+    </p>
+</div>
+
+<div class="section">
+    <h2>2. Font Properties</h2>
+    <p class="font-demo">
+        This text uses font size, style, weight and family.
+    </p>
+</div>
+
+<div class="section">
+    <h2>3. Box Model</h2>
+    <div class="box-model">
+        Content + Padding + Border + Margin
+    </div>
+</div>
+
+<div class="section background-demo">
+    <h2>4. Background Properties</h2>
+    Background color and gradient example
+</div>
+
+<div class="section border-demo">
+    <h2>5. Border Properties</h2>
+    Dashed border with radius
+</div>
+
+<div class="section display-demo">
+    <h2>6. Display & Visibility</h2>
+    <span>Block Element 1</span>
+    <span class="hidden">Hidden Element</span>
+    <span>Block Element 2</span>
+</div>
+
+<div class="section position-box">
+    <h2>7. Positioning</h2>
+    <div class="absolute-box">Absolute Box</div>
+</div>
+
+<div class="section">
+    <h2>8. Float & Clear</h2>
+    <div class="float-left"></div>
+    <p>This text wraps around floated element.</p>
+    <div class="clear"></div>
+</div>
+
+<div class="section">
+    <h2>9. Link States</h2>
+    <a href="#">Hover / Click this link</a>
+</div>
+
+<div class="section">
+    <h2>10. List Styling</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>11. Table Styling</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+        <tr>
+            <td>Sathya</td>
+            <td>AI & ML</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
