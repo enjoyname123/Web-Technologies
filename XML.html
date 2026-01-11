@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XML Complete Program – ECET</title>
+</head>
+
+<body>
+
+<h1 align="center">XML COMPLETE PROGRAM (ECET ORIENTED)</h1>
+<hr>
+
+<!-- =====================================================
+     XML INTRODUCTION
+===================================================== -->
+<h2>What is XML?</h2>
+<p>
+    XML (eXtensible Markup Language) is used to store and transport data.
+    It uses user-defined tags and follows strict syntax rules.
+</p>
+
+<hr>
+
+<!-- =====================================================
+     XML DECLARATION
+===================================================== -->
+<h2>1. XML Declaration</h2>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</pre>
+
+<hr>
+
+<!-- =====================================================
+     XML DOCUMENT WITH ALL FEATURES
+===================================================== -->
+<h2>2. Complete XML Document</h2>
+
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!-- Processing Instruction --&gt;
+&lt;?xml-stylesheet type="text/xsl" href="style.xsl"?&gt;
+
+&lt;!-- DTD Definition --&gt;
+&lt;!DOCTYPE college [
+    &lt;!ELEMENT college (student+)&gt;
+    &lt;!ELEMENT student (name, course, age, marks, address, notes)&gt;
+    &lt;!ELEMENT name (#PCDATA)&gt;
+    &lt;!ELEMENT course (#PCDATA)&gt;
+    &lt;!ELEMENT age (#PCDATA)&gt;
+    &lt;!ELEMENT marks (#PCDATA)&gt;
+    &lt;!ELEMENT address (#PCDATA)&gt;
+    &lt;!ELEMENT notes (#PCDATA)&gt;
+    &lt;!ATTLIST student id ID #REQUIRED&gt;
+]&gt;
+
+&lt;college xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+
+    &lt;student id="S101" status="active"&gt;
+        &lt;name&gt;Sathya&lt;/name&gt;
+        &lt;course&gt;AI &amp;amp; ML&lt;/course&gt;
+        &lt;age&gt;20&lt;/age&gt;
+        &lt;marks&gt;85&lt;/marks&gt;
+        &lt;address&gt;Hyderabad &amp;lt;Telangana&amp;gt;&lt;/address&gt;
+
+        &lt;notes&gt;&lt;![CDATA[
+            XML CDATA section
+            allows special characters &amp;lt; &amp;amp; &amp;gt;
+        ]]&gt;&lt;/notes&gt;
+    &lt;/student&gt;
+
+&lt;/college&gt;
+</pre>
+
+<hr>
+
+<!-- =====================================================
+     XML FEATURES EXPLANATION
+===================================================== -->
+<h2>3. XML Features Demonstrated</h2>
+
+<ul>
+    <li>XML Declaration</li>
+    <li>Root Element</li>
+    <li>Nested Elements</li>
+    <li>Attributes</li>
+    <li>Comments</li>
+    <li>Character Data</li>
+    <li>Special Characters (Entities)</li>
+    <li>CDATA Section</li>
+    <li>DTD (Internal)</li>
+    <li>Processing Instruction</li>
+    <li>Namespace</li>
+</ul>
+
+<hr>
+
+<!-- =====================================================
+     XML VS HTML
+===================================================== -->
+<h2>4. XML vs HTML</h2>
+
+<table border="1" cellpadding="5">
+<tr>
+    <th>XML</th>
+    <th>HTML</th>
+</tr>
+<tr>
+    <td>Stores data</td>
+    <td>Displays data</td>
+</tr>
+<tr>
+    <td>User-defined tags</td>
+    <td>Predefined tags</td>
+</tr>
+<tr>
+    <td>Case-sensitive</td>
+    <td>Not case-sensitive</td>
+</tr>
+<tr>
+    <td>Strict syntax</td>
+    <td>Flexible syntax</td>
+</tr>
+</table>
+
+<hr>
+
+<!-- =====================================================
+     EXAM / VIVA NOTES
+===================================================== -->
+<h2>5. Viva Notes</h2>
+<p>
+<b>DTD:</b> Defines the structure and rules of an XML document.<br>
+<b>CDATA:</b> Used to include text that should not be parsed.<br>
+<b>Entity:</b> Used to represent special characters.<br>
+<b>Namespace:</b> Avoids name conflicts in XML.
+</p>
+
+<pre>
+  <?xml version="1.0" encoding="UTF-8"?>
+<!-- =====================================================
+     XML COMPLETE MASTER FILE – ECET / DIPLOMA
+     Covers:
+     - XML declaration
+     - Elements
+     - Attributes
+     - Nested structure
+     - Comments
+     - Character data
+     - CDATA section
+     - Entities
+     - Namespaces
+     - Processing Instruction
+     - DTD (internal)
+===================================================== -->
+
+<!-- ================= PROCESSING INSTRUCTION ================= -->
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+<!-- ================= DOCUMENT TYPE DEFINITION (DTD) ================= -->
+<!DOCTYPE college [
+    <!ELEMENT college (student+)>
+    <!ELEMENT student (name, course, age, marks, address, notes)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT course (#PCDATA)>
+    <!ELEMENT age (#PCDATA)>
+    <!ELEMENT marks (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT notes (#PCDATA)>
+    <!ATTLIST student id ID #REQUIRED>
+]>
+
+<!-- ================= ROOT ELEMENT ================= -->
+<college xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- ================= STUDENT ELEMENT ================= -->
+    <student id="S101" status="active">
+
+        <!-- Simple elements -->
+        <name>Sathya</name>
+        <course>AI &amp; ML</course>
+        <age>20</age>
+
+        <!-- Character data -->
+        <marks>85</marks>
+
+        <!-- Text with special characters -->
+        <address>Hyderabad &lt;Telangana&gt;</address>
+
+        <!-- ================= CDATA SECTION ================= -->
+        <notes><![CDATA[
+            This section can contain
+            <tags>, symbols &, and code
+            without parsing errors.
+        ]]></notes>
+
+    </student>
+
+    <!-- ================= ANOTHER STUDENT ================= -->
+    <student id="S102" status="inactive">
+        <name>Ravi</name>
+        <course>Computer Science</course>
+        <age>21</age>
+        <marks>78</marks>
+        <address>Secunderabad</address>
+        <notes>No additional notes</notes>
+    </student>
+
+</college>
+</pre>
+  
+<hr>
+
+<h3 align="center">END OF XML PROGRAM</h3>
+
+</body>
+</html>
