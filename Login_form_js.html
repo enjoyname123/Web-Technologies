@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+
+    <script type="text/javascript">
+        function f1() {
+            var uname = document.getElementById("uname").value;
+            var pwd = document.getElementById("pwd").value;
+
+            if (uname == "admin" && pwd == "1234") {
+                alert("Login Successful");
+                window.location.href = "demo.html";
+                return false;
+            } else {
+                alert("Login Failed");
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h2>LOGIN FORM</h2>
+
+    <form onsubmit="return f1()">
+        Username:
+        <input type="text" id="uname" required>
+        <br><br>
+
+        Password:
+        <input type="password" id="pwd" required>
+        <br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+</html>
