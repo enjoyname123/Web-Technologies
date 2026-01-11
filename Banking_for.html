@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banking</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var balance = 9999;
+    var running = true;
+
+    function bank() {
+        while (running) {
+            var opt = parseInt(prompt(
+                "Choose an option:\n" +
+                "1. Withdraw\n" +
+                "2. Deposit\n" +
+                "3. Balance\n" +
+                "4. Exit"
+            ));
+
+            switch (opt) {
+
+                case 1: // Withdraw
+                    var wdr = parseInt(prompt("Enter withdrawal amount:"));
+
+                    if (wdr > 0 && wdr % 100 == 0 && wdr <= balance) {
+
+                        // for loop (100-based withdrawal)
+                        for (var i = 0; i < wdr; i += 100) {
+                            balance -= 100;
+                        }
+
+                        alert(
+                            "Amount withdrawn: " + wdr +
+                            "\nCurrent balance: " + balance
+                        );
+
+                    } else if (wdr % 100 != 0) {
+                        alert("Only multiples of 100 accepted");
+                    } else {
+                        alert("Insufficient balance or invalid amount");
+                    }
+                    break;
+
+                case 2: // Deposit
+                    var dpmt = parseInt(prompt("Enter deposit amount:"));
+
+                    if (dpmt > 0 && dpmt % 100 == 0) {
+                        balance += dpmt;
+                        alert(
+                            "Amount deposited: " + dpmt +
+                            "\nCurrent balance: " + balance
+                        );
+                    } else {
+                        alert("Only multiples of 100 accepted");
+                    }
+                    break;
+
+                case 3: // Balance
+                    alert("Current Balance: " + balance);
+                    break;
+
+                case 4: // Exit
+                    running = false;
+                    alert("Thank you. Visit again.");
+                    break;
+
+                default:
+                    alert("Invalid option");
+            }
+        }
+    }
+
+    // Authentication
+    var username = prompt("Enter username:");
+    var pin = parseInt(prompt("Enter PIN:"));
+
+    if (username === "Admin" && pin === 1234) {
+        bank();
+    } else {
+        alert("Invalid credentials. Try again.");
+    }
+</script>
+
+</body>
+</html>
