@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!-- =====================================================
+     HTML COMPLETE MASTER FILE – ECET / DIPLOMA
+     Covers 100+ tags, attributes, forms, events
+===================================================== -->
+
+<html lang="en">
+
+<head>
+    <!-- ---------- BASIC META TAGS ---------- -->
+    <title>HTML Complete Master Program</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="HTML ECET Complete Coverage">
+    <meta name="keywords" content="HTML, ECET, Tags, Attributes">
+    <meta name="author" content="Student">
+    <meta http-equiv="refresh" content="600">
+
+    <!-- ---------- BASE TAG ---------- -->
+    <base href="https://example.com/" target="_blank">
+
+    <!-- ---------- SCRIPT FOR EVENTS ---------- -->
+    <script>
+        function submitForm() {
+            alert("Form Submitted");
+            return false;
+        }
+        function resetForm() {
+            alert("Form Reset");
+        }
+        function clickMsg() {
+            alert("Button Clicked");
+        }
+        function mouseIn() {
+            document.getElementById("mouseBox").innerHTML = "Mouse Over";
+        }
+        function mouseOut() {
+            document.getElementById("mouseBox").innerHTML = "Mouse Out";
+        }
+    </script>
+</head>
+
+<body bgcolor="lightyellow" text="black" link="blue" vlink="purple" alink="red">
+
+<!-- =====================================================
+     TEXT, ALIGNMENT & FORMATTING TAGS
+===================================================== -->
+
+<center>
+    <h1 id="mainTitle">HTML COMPLETE ECET MASTER FILE</h1>
+</center>
+
+<p align="justify">
+    <b>Bold</b>,
+    <strong>Strong</strong>,
+    <i>Italic</i>,
+    <em>Emphasis</em>,
+    <u>Underline</u>,
+    <mark>Mark</mark>,
+    <small>Small</small>,
+    <big>Big</big>,
+    <strike>Strike</strike>,
+    <s>Strike (s)</s>,
+    <del>Deleted</del>,
+    <ins>Inserted</ins>,
+    H<sub>2</sub>O,
+    10<sup>2</sup>
+</p>
+
+<hr width="80%" size="3" color="red">
+
+<!-- ---------- KEYBOARD INPUT ---------- -->
+Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to Copy
+
+<!-- ---------- PREFORMATTED ---------- -->
+<pre>
+Preformatted text
+Spaces and line breaks preserved
+</pre>
+
+<blockquote cite="https://example.com">Blockquote text</blockquote>
+<q>Inline Quote</q>
+<cite>Citation</cite>
+<abbr title="Hyper Text Markup Language">HTML</abbr>
+
+<hr>
+
+<!-- =====================================================
+     FONT & MARQUEE (DEPRECATED – ECET ACCEPTED)
+===================================================== -->
+
+<font face="Arial" size="4" color="blue">
+    Font Tag Example
+</font>
+
+<marquee behavior="alternate" direction="right" scrollamount="5">
+    Marquee Text Example
+</marquee>
+
+<hr>
+
+<!-- =====================================================
+     LINKS & IMAGES
+===================================================== -->
+
+<a href="https://google.com" title="Google Link">Visit Google</a>
+
+<br><br>
+
+<img src="https://via.placeholder.com/150"
+     alt="Sample Image"
+     width="150"
+     height="150"
+     border="2"
+     loading="lazy">
+
+<hr>
+
+<!-- =====================================================
+     LIST TAGS
+===================================================== -->
+
+<ul type="square">
+    <li value="1">HTML</li>
+    <li value="2">CSS</li>
+</ul>
+
+<ol type="A" start="3" reversed>
+    <li>JS</li>
+    <li>PHP</li>
+</ol>
+
+<dl>
+    <dt>HTML</dt>
+    <dd>Markup Language</dd>
+</dl>
+
+<hr>
+
+<!-- =====================================================
+     TABLE WITH ATTRIBUTES
+===================================================== -->
+
+<table border="1" cellpadding="10" cellspacing="5" width="80%" align="center">
+    <caption align="top">Student Table</caption>
+
+    <tr bgcolor="lightblue">
+        <th colspan="2">Details</th>
+    </tr>
+
+    <tr>
+        <td rowspan="2">Name</td>
+        <td>Sathya</td>
+    </tr>
+
+    <tr>
+        <td>AI & ML</td>
+    </tr>
+</table>
+
+<hr>
+
+<!-- =====================================================
+     FORMS – GET & POST + FIELDSET & LEGEND
+===================================================== -->
+
+<form method="get" onsubmit="return submitForm()" onreset="resetForm()">
+    <fieldset>
+        <legend>GET Form</legend>
+
+        Name:
+        <input type="text" name="name" placeholder="Enter name"
+               required onchange="alert('Name changed')"><br><br>
+
+        <input type="submit">
+        <input type="reset">
+    </fieldset>
+</form>
+
+<br>
+
+<form method="post">
+    <fieldset>
+        <legend>POST Form</legend>
+
+        Password:
+        <input type="password"><br><br>
+
+        Gender:
+        <input type="radio" name="g">Male
+        <input type="radio" name="g">Female<br><br>
+
+        Languages:
+        <input type="checkbox">C
+        <input type="checkbox">Java<br><br>
+
+        Course:
+        <select size="2" multiple>
+            <option selected>AI</option>
+            <option>ML</option>
+        </select><br><br>
+
+        <textarea rows="3" cols="25">Comments</textarea><br><br>
+
+        <button onclick="clickMsg()">Click</button>
+    </fieldset>
+</form>
+
+<hr>
+
+<!-- =====================================================
+     EVENTS – MOUSE
+===================================================== -->
+
+<div id="mouseBox"
+     onmouseover="mouseIn()"
+     onmouseout="mouseOut()"
+     style="width:200px;height:40px;border:1px solid black;text-align:center;">
+    Mouse Event Box
+</div>
+
+<hr>
+
+<!-- =====================================================
+     DIV & SPAN WITH ATTRIBUTES
+===================================================== -->
+
+<div style="border:2px solid black; padding:10px; background-color:lightcyan;">
+    DIV Block Element
+</div>
+
+<span style="color:red; font-weight:bold;">
+    SPAN Inline Element
+</span>
+
+<hr>
+
+<!-- =====================================================
+     SEMANTIC HTML5 TAGS
+===================================================== -->
+
+<header>Header</header>
+<nav>Navigation</nav>
+<section>Section</section>
+<article>Article</article>
+<aside>Aside</aside>
+<main>Main</main>
+<footer>Footer</footer>
+
+<hr>
+
+<!-- =====================================================
+     MEDIA & EMBED TAGS
+===================================================== -->
+
+<audio controls muted loop></audio>
+<video controls width="200"></video>
+
+<iframe src="https://example.com" width="300" height="150"></iframe>
+<embed src="sample.pdf" width="200" height="100">
+<object></object>
+<param>
+
+<hr>
+
+<!-- =====================================================
+     SCRIPTING & MISC
+===================================================== -->
+
+<script></script>
+<noscript>No Script Support</noscript>
+
+<address>
+    Written by Student<br>
+    India
+</address>
+
+<time datetime="2026-01-01">Jan 1, 2026</time><br>
+<progress value="70" max="100"></progress>
+<meter value="0.6"></meter>
+
+<!-- =====================================================
+     ADVANCED / OFTEN-MISSED HTML TAGS (NOW COVERED)
+===================================================== -->
+
+<hr>
+<h2>Advanced & Special HTML Tags</h2>
+
+<!-- CODE REPRESENTATION -->
+<p>Code Example: <code>printf("Hello World");</code></p>
+<p>Sample Output: <samp>Hello World</samp></p>
+<p>Variable: <var>x</var> = 10</p>
+
+<!-- OUTPUT TAG -->
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="number" id="a" value="5">
+    +
+    <input type="number" id="b" value="3">
+    =
+    <output name="result"></output>
+</form>
+
+<hr>
+
+<!-- DATALIST & OPTGROUP -->
+<form>
+    Choose Browser:
+    <input list="browsers">
+    <datalist id="browsers">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Edge">
+    </datalist>
+</form>
+
+<select>
+    <optgroup label="Programming">
+        <option>C</option>
+        <option>Java</option>
+    </optgroup>
+    <optgroup label="Web">
+        <option>HTML</option>
+        <option>CSS</option>
+    </optgroup>
+</select>
+
+<hr>
+
+<!-- DETAILS & SUMMARY -->
+<details>
+    <summary>Click to Expand</summary>
+    This content is hidden until expanded.
+</details>
+
+<hr>
+
+<!-- CANVAS -->
+<canvas width="200" height="100" style="border:1px solid black;">
+    Canvas not supported
+</canvas>
+
+<hr>
+
+<!-- RUBY ANNOTATION -->
+<ruby>
+    漢 <rt>Kan</rt>
+    字 <rt>Ji</rt>
+</ruby>
+
+<hr>
+
+<!-- BIDIRECTIONAL TEXT -->
+<p><bdi>UserName</bdi>: Value</p>
+<p><bdo dir="rtl">This text is right-to-left</bdo></p>
+
+<hr>
+
+<!-- DATA TAG -->
+<p>Product Price: <data value="499">₹499</data></p>
+
+</body>
+</html>
