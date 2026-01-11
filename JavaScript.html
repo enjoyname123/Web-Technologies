@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Complete Program – Exam Oriented</title>
+</head>
+<body>
+
+<h1>JavaScript Complete Coverage Program</h1>
+
+<script>
+/* =====================================================
+   1. VARIABLES & DATA TYPES
+===================================================== */
+document.write("<h2>1. Variables & Data Types</h2>");
+
+var a = 10;                 // number
+let b = "JavaScript";       // string
+const c = true;             // boolean
+let d;                      // undefined
+let e = null;               // null
+
+document.write("a = " + a + "<br>");
+document.write("b = " + b + "<br>");
+document.write("c = " + c + "<br>");
+document.write("d = " + d + "<br>");
+document.write("e = " + e + "<br>");
+
+/* =====================================================
+   2. OPERATORS
+===================================================== */
+document.write("<h2>2. Operators</h2>");
+
+let x = 5, y = 2;
+
+document.write("Arithmetic: x + y = " + (x + y) + "<br>");
+document.write("Assignment: x += y → " + (x += y) + "<br>");
+document.write("Comparison: x == y → " + (x == y) + "<br>");
+document.write("Strict Comparison: x === y → " + (x === y) + "<br>");
+document.write("Logical AND: true && false → " + (true && false) + "<br>");
+document.write("Ternary: " + (x > y ? "x is bigger" : "y is bigger") + "<br>");
+
+/* =====================================================
+   3. CONTROL STATEMENTS
+===================================================== */
+document.write("<h2>3. Control Statements</h2>");
+
+let num = 7;
+
+if (num % 2 == 0) {
+    document.write("Even Number<br>");
+} else {
+    document.write("Odd Number<br>");
+}
+
+document.write("Switch Case:<br>");
+let day = 2;
+
+switch (day) {
+    case 1: document.write("Monday<br>"); break;
+    case 2: document.write("Tuesday<br>"); break;
+    default: document.write("Invalid Day<br>");
+}
+
+/* =====================================================
+   4. LOOPS
+===================================================== */
+document.write("<h2>4. Loops</h2>");
+
+document.write("For Loop: ");
+for (let i = 1; i <= 5; i++) {
+    document.write(i + " ");
+}
+document.write("<br>");
+
+document.write("While Loop: ");
+let j = 1;
+while (j <= 3) {
+    document.write(j + " ");
+    j++;
+}
+document.write("<br>");
+
+document.write("Do-While Loop: ");
+let k = 1;
+do {
+    document.write(k + " ");
+    k++;
+} while (k <= 2);
+document.write("<br>");
+
+/* =====================================================
+   5. FUNCTIONS
+===================================================== */
+document.write("<h2>5. Functions</h2>");
+
+function add(p, q) {
+    return p + q;
+}
+
+document.write("Function add(3,4) = " + add(3, 4) + "<br>");
+
+/* =====================================================
+   6. ARRAYS
+===================================================== */
+document.write("<h2>6. Arrays</h2>");
+
+let arr = [10, 20, 30];
+
+document.write("Array Elements: ");
+for (let i = 0; i < arr.length; i++) {
+    document.write(arr[i] + " ");
+}
+document.write("<br>");
+
+/* =====================================================
+   7. OBJECTS
+===================================================== */
+document.write("<h2>7. Objects</h2>");
+
+let student = {
+    name: "Sathya",
+    course: "AI & ML",
+    age: 20
+};
+
+document.write("Name: " + student.name + "<br>");
+document.write("Course: " + student.course + "<br>");
+document.write("Age: " + student.age + "<br>");
+
+/* =====================================================
+   8. STRING METHODS
+===================================================== */
+document.write("<h2>8. String Methods</h2>");
+
+let str = "JavaScript";
+
+document.write("Length: " + str.length + "<br>");
+document.write("Uppercase: " + str.toUpperCase() + "<br>");
+document.write("Substring: " + str.substring(0,4) + "<br>");
+
+/* =====================================================
+   9. MATH & DATE OBJECTS
+===================================================== */
+document.write("<h2>9. Math & Date Objects</h2>");
+
+document.write("Math.sqrt(16) = " + Math.sqrt(16) + "<br>");
+document.write("Math.random() = " + Math.random() + "<br>");
+
+let today = new Date();
+document.write("Current Date: " + today + "<br>");
+
+/* =====================================================
+   10. TYPE CHECKING
+===================================================== */
+document.write("<h2>10. Type Checking</h2>");
+
+document.write("typeof a → " + typeof a + "<br>");
+document.write("typeof b → " + typeof b + "<br>");
+
+/* =====================================================
+   11. EVENT HANDLING
+===================================================== */
+document.write("<h2>11. Event Handling</h2>");
+
+function showMsg() {
+    alert("Button Clicked!");
+}
+</script>
+
+<button onclick="showMsg()">Click Me</button>
+
+</body>
+</html>
