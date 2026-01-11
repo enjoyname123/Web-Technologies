@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Operators – One File</title>
+</head>
+<body>
+
+<h2>JavaScript Operators Demo (GitHub Pages)</h2>
+
+<script>
+/* =====================================================
+   JAVASCRIPT OPERATORS – SINGLE FILE (BROWSER)
+   ===================================================== */
+
+/* 1. Arithmetic Operators */
+let a = 10, b = 3;
+document.write("<h3>Arithmetic Operators</h3>");
+document.write("a + b = " + (a + b) + "<br>");
+document.write("a - b = " + (a - b) + "<br>");
+document.write("a * b = " + (a * b) + "<br>");
+document.write("a / b = " + (a / b) + "<br>");
+document.write("a % b = " + (a % b) + "<br>");
+document.write("a ** b = " + (a ** b) + "<br>");
+
+/* 2. Assignment Operators */
+let x = 5;
+document.write("<h3>Assignment Operators</h3>");
+x += 2; document.write("x += 2 → " + x + "<br>");
+x -= 1; document.write("x -= 1 → " + x + "<br>");
+x *= 3; document.write("x *= 3 → " + x + "<br>");
+x /= 2; document.write("x /= 2 → " + x + "<br>");
+x %= 4; document.write("x %= 4 → " + x + "<br>");
+
+/* 3. Comparison Operators */
+document.write("<h3>Comparison Operators</h3>");
+document.write("5 == '5' → " + (5 == "5") + "<br>");
+document.write("5 === '5' → " + (5 === "5") + "<br>");
+document.write("5 != 3 → " + (5 != 3) + "<br>");
+document.write("5 !== '5' → " + (5 !== "5") + "<br>");
+document.write("5 > 3 → " + (5 > 3) + "<br>");
+document.write("5 <= 3 → " + (5 <= 3) + "<br>");
+
+/* 4. Logical Operators */
+document.write("<h3>Logical Operators</h3>");
+document.write("true && false → " + (true && false) + "<br>");
+document.write("true || false → " + (true || false) + "<br>");
+document.write("!true → " + (!true) + "<br>");
+
+/* 5. Bitwise Operators */
+let m = 5, n = 1;
+document.write("<h3>Bitwise Operators</h3>");
+document.write("m & n → " + (m & n) + "<br>");
+document.write("m | n → " + (m | n) + "<br>");
+document.write("m ^ n → " + (m ^ n) + "<br>");
+document.write("~m → " + (~m) + "<br>");
+document.write("m << 1 → " + (m << 1) + "<br>");
+document.write("m >> 1 → " + (m >> 1) + "<br>");
+
+/* 6. Increment / Decrement */
+let i = 10;
+document.write("<h3>Increment / Decrement</h3>");
+document.write("i++ → " + (i++) + "<br>");
+document.write("after i++ → " + i + "<br>");
+document.write("++i → " + (++i) + "<br>");
+document.write("i-- → " + (i--) + "<br>");
+document.write("after i-- → " + i + "<br>");
+
+/* 7. Ternary Operator */
+let age = 18;
+document.write("<h3>Ternary Operator</h3>");
+document.write(age >= 18 ? "Eligible to Vote<br>" : "Not Eligible<br>");
+
+/* 8. Type Operators */
+document.write("<h3>Type Operators</h3>");
+document.write("typeof age → " + typeof age + "<br>");
+document.write("age instanceof Number → " + (age instanceof Number) + "<br>");
+
+/* 9. String Operator */
+let s1 = "Hello", s2 = "World";
+document.write("<h3>String Operator</h3>");
+document.write(s1 + " " + s2 + "<br>");
+
+/* 10. Nullish Coalescing */
+let value = null;
+document.write("<h3>Nullish Coalescing</h3>");
+document.write(value ?? "Default Value<br>");
+
+/* 11. Optional Chaining */
+let user = { profile: { name: "Sathya" } };
+document.write("<h3>Optional Chaining</h3>");
+document.write(user?.profile?.name + "<br>");
+document.write(user?.address?.city + "<br>");
+</script>
+
+</body>
+</html>
