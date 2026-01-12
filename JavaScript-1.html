@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Complete Program – ECET Exam Oriented</title>
+</head>
+<body>
+
+<h1>JavaScript Complete ECET Coverage</h1>
+
+<script>
+/* =====================================================
+   0. COMMENTS IN JAVASCRIPT
+===================================================== */
+// Single-line comment
+
+/*
+   Multi-line comment
+   Used for documentation
+*/
+
+/* =====================================================
+   1. VARIABLES & DATA TYPES
+===================================================== */
+document.write("<h2>1. Variables & Data Types</h2>");
+
+var a = 10;           // Number
+let b = "JavaScript"; // String
+const c = true;       // Boolean
+let d;                // Undefined
+let e = null;         // Null
+
+document.write("a = " + a + "<br>");
+document.write("b = " + b + "<br>");
+document.write("c = " + c + "<br>");
+document.write("d = " + d + "<br>");
+document.write("e = " + e + "<br>");
+
+/* =====================================================
+   2. ESCAPE CHARACTERS
+===================================================== */
+document.write("<h2>2. Escape Characters</h2>");
+
+document.write("New Line \\n Example<br>");
+document.write("Tab \\t Example<br>");
+document.write("Single Quote \\' Example<br>");
+document.write("Double Quote \\\" Example<br>");
+document.write("Backslash \\\\ Example<br>");
+
+/* =====================================================
+   3. OPERATORS
+===================================================== */
+document.write("<h2>3. Operators</h2>");
+
+let x = 5, y = 2;
+
+document.write("Arithmetic: x + y = " + (x + y) + "<br>");
+document.write("Assignment: x += y = " + (x += y) + "<br>");
+document.write("Comparison: x == y → " + (x == y) + "<br>");
+document.write("Strict Comparison: x === y → " + (x === y) + "<br>");
+document.write("Logical AND: true && false → " + (true && false) + "<br>");
+document.write("Ternary: " + (x > y ? "x is bigger" : "y is bigger") + "<br>");
+
+/* =====================================================
+   4. CONTROL STATEMENTS
+===================================================== */
+document.write("<h2>4. Control Statements</h2>");
+
+let num = 15;
+
+/* if */
+if (num > 0) {
+    document.write("Positive Number<br>");
+}
+
+/* if else */
+if (num % 2 == 0) {
+    document.write("Even<br>");
+} else {
+    document.write("Odd<br>");
+}
+
+/* if else if else */
+if (num < 0) {
+    document.write("Negative<br>");
+} else if (num == 0) {
+    document.write("Zero<br>");
+} else {
+    document.write("Positive<br>");
+}
+
+/* switch */
+let day = 3;
+switch (day) {
+    case 1: document.write("Monday<br>"); break;
+    case 2: document.write("Tuesday<br>"); break;
+    case 3: document.write("Wednesday<br>"); break;
+    default: document.write("Invalid Day<br>");
+}
+
+/* =====================================================
+   5. LOOPS
+===================================================== */
+document.write("<h2>5. Loops</h2>");
+
+document.write("For Loop: ");
+for (let i = 1; i <= 5; i++) {
+    document.write(i + " ");
+}
+document.write("<br>");
+
+document.write("While Loop: ");
+let j = 1;
+while (j <= 3) {
+    document.write(j + " ");
+    j++;
+}
+document.write("<br>");
+
+document.write("Do While Loop: ");
+let k = 1;
+do {
+    document.write(k + " ");
+    k++;
+} while (k <= 2);
+document.write("<br>");
+
+/* =====================================================
+   6. JUMPING STATEMENTS
+===================================================== */
+document.write("<h2>6. Jumping Statements</h2>");
+
+document.write("Break & Continue: ");
+for (let i = 1; i <= 5; i++) {
+    if (i == 3) continue;
+    if (i == 5) break;
+    document.write(i + " ");
+}
+document.write("<br>");
+
+/* =====================================================
+   7. FUNCTIONS
+===================================================== */
+document.write("<h2>7. Functions</h2>");
+
+function add(p, q) {
+    return p + q; // return statement
+}
+
+document.write("add(4,5) = " + add(4, 5) + "<br>");
+
+/* =====================================================
+   8. ARRAYS & ARRAY METHODS
+===================================================== */
+document.write("<h2>8. Arrays & Methods</h2>");
+
+let arr = [10, 20, 30];
+
+arr.push(40);
+arr.pop();
+arr.unshift(5);
+arr.shift();
+
+document.write("Array: " + arr + "<br>");
+document.write("Length: " + arr.length + "<br>");
+document.write("Index of 20: " + arr.indexOf(20) + "<br>");
+document.write("Join: " + arr.join("-") + "<br>");
+
+/* =====================================================
+   9. STRING METHODS (ALL COMMON)
+===================================================== */
+document.write("<h2>9. String Methods</h2>");
+
+let str = "JavaScript Programming";
+
+document.write("Length: " + str.length + "<br>");
+document.write("Upper: " + str.toUpperCase() + "<br>");
+document.write("Lower: " + str.toLowerCase() + "<br>");
+document.write("Substring: " + str.substring(0, 10) + "<br>");
+document.write("Slice: " + str.slice(0, 4) + "<br>");
+document.write("Replace: " + str.replace("JavaScript", "JS") + "<br>");
+document.write("CharAt(2): " + str.charAt(2) + "<br>");
+document.write("Split: " + str.split(" ") + "<br>");
+
+/* =====================================================
+   10. DATE OBJECT
+===================================================== */
+document.write("<h2>10. Date Object</h2>");
+
+let today = new Date();
+document.write("Date: " + today + "<br>");
+document.write("Year: " + today.getFullYear() + "<br>");
+document.write("Month: " + today.getMonth() + "<br>");
+document.write("Day: " + today.getDate() + "<br>");
+
+/* =====================================================
+   11. MATH OBJECT
+===================================================== */
+document.write("<h2>11. Math Object</h2>");
+
+document.write("sqrt(25): " + Math.sqrt(25) + "<br>");
+document.write("pow(2,3): " + Math.pow(2,3) + "<br>");
+document.write("Random: " + Math.random() + "<br>");
+document.write("Round: " + Math.round(4.6) + "<br>");
+
+/* =====================================================
+   12. DIALOG BOXES
+===================================================== */
+function showAlert() {
+    alert("This is an Alert Box");
+}
+
+function showConfirm() {
+    let result = confirm("Are you sure?");
+    alert(result);
+}
+
+function showPrompt() {
+    let name = prompt("Enter your name:");
+    alert("Hello " + name);
+}
+
+/* =====================================================
+   13. EVENTS (BUTTON, FORM, DATE)
+===================================================== */
+function onClickEvent() {
+    alert("Button Click Event");
+}
+
+function onFocusEvent() {
+    alert("Input Focused");
+}
+
+function onChangeEvent() {
+    alert("Date Changed");
+}
+
+function onSubmitEvent() {
+    alert("Form Submitted");
+    return false;
+}
+</script>
+
+<h2>12. Event Handling</h2>
+
+<button onclick="showAlert()">Alert</button>
+<button onclick="showConfirm()">Confirm</button>
+<button onclick="showPrompt()">Prompt</button>
+<button onclick="onClickEvent()">Click Event</button>
+
+<form onsubmit="return onSubmitEvent()">
+    <input type="text" onfocus="onFocusEvent()" placeholder="Focus Event">
+    <br><br>
+    <input type="date" onchange="onChangeEvent()">
+    <br><br>
+    <input type="submit">
+</form>
+
+</body>
+</html>
