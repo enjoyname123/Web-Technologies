@@ -42,6 +42,7 @@
 
 <body bgcolor="lightyellow" text="black" link="blue" vlink="purple" alink="red">
 
+
 <!----
 ==================== body TAG ATTRIBUTES ====================
 
@@ -277,6 +278,146 @@ Use CSS animations instead.
 <hr>
 
 <!-- =====================================================
+     TEXT PROPERTIES
+===================================================== -->
+
+<!--
+color:
+Sets the text color
+-->
+<p style="color: blue;">
+    This text demonstrates color
+</p>
+
+<!--
+text-align:
+Aligns text horizontally (left | right | center | justify)
+-->
+<p style="text-align: center;">
+    This text demonstrates text-align
+</p>
+
+<!--
+text-decoration:
+Adds decoration to text (underline | overline | line-through)
+-->
+<p style="text-decoration: underline;">
+    This text demonstrates text-decoration
+</p>
+
+<!--
+text-transform:
+Controls text case (uppercase | lowercase | capitalize)
+-->
+<p style="text-transform: uppercase;">
+    This text demonstrates text-transform
+</p>
+
+<!--
+line-height:
+Sets space between lines of text
+-->
+<p style="line-height: 1.8;">
+    This text demonstrates line-height<br>
+    Second line
+</p>
+
+<!-- =====================================================
+     FONT PROPERTIES
+===================================================== -->
+
+<!--
+font-family:
+Specifies the font type
+-->
+<p style="font-family: Arial;">
+    This text demonstrates font-family
+</p>
+
+<!--
+font-size:
+Sets the size of the text
+-->
+<p style="font-size: 20px;">
+    This text demonstrates font-size
+</p>
+
+<!--
+font-style:
+Defines font style (normal | italic | oblique)
+-->
+<p style="font-style: italic;">
+    This text demonstrates font-style
+</p>
+
+<!--
+font-weight:
+Sets text thickness (normal | bold | 100–900)
+-->
+<p style="font-weight: bold;">
+    This text demonstrates font-weight
+</p>
+
+<!-- =====================================================
+     GENERAL DIVISION / BOX MODEL
+===================================================== -->
+
+<!--
+margin:
+Space outside the element
+border:
+Border around the element
+padding:
+Space inside the element
+-->
+<div style="margin: 20px; border: 2px solid black; padding: 15px;">
+    This div demonstrates margin, border, and padding
+</div>
+
+<!--
+content:
+Used with pseudo-elements (::before / ::after)
+(Note: cannot be demonstrated inline)
+-->
+<p>
+    content property is used with ::before and ::after pseudo-elements
+</p>
+
+<!-- =====================================================
+     BACKGROUND PROPERTIES
+===================================================== -->
+
+<!--
+background-color:
+Sets background color
+-->
+<div style="background-color: lightblue;">
+    Background color example
+</div>
+
+<!--
+background-image:
+Adds image as background
+background-repeat:
+Controls image repetition
+background-position:
+Sets image position
+background-size:
+Controls image size (cover | contain | auto)
+-->
+<div style="
+    background-image: url('https://via.placeholder.com/150');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+">
+    Background image example
+</div>
+       <br>
+
+
+<!-- =====================================================
      FORMS – GET & POST + FIELDSET & LEGEND
 ===================================================== -->
 
@@ -323,10 +464,12 @@ Use CSS animations instead.
 </form>
 
 <hr>
+     
 
-<form>
+     <form>
   <input type="text" placeholder="Text"><br>
   <form>
+       
   <textarea name="message" rows="4" cols="30" placeholder="Enter your message">
   </textarea>
 </form>
