@@ -42,6 +42,71 @@
 
 <body bgcolor="lightyellow" text="black" link="blue" vlink="purple" alink="red">
 
+<!----
+==================== body TAG ATTRIBUTES ====================
+
+1) GLOBAL ATTRIBUTES (Valid for all HTML elements)
+--------------------------------------------------
+id              : Unique identifier for the element
+class           : Used for CSS styling and JS selection
+style           : Inline CSS styles (not recommended for large projects)
+title           : Tooltip text on hover
+hidden          : Hides the element
+lang            : Language of the content (e.g., en, en-IN)
+dir             : Text direction (ltr | rtl)
+tabindex        : Keyboard navigation order
+contenteditable : Makes content editable
+data-*          : Custom data attributes for JS
+
+Example:
+<body id="main" class="dark" lang="en" data-user="admin">
+
+--------------------------------------------------
+
+2) EVENT HANDLER ATTRIBUTES (JavaScript related)
+------------------------------------------------
+onload          : Executes when page loads
+onunload        : Executes when page unloads
+onclick         : Mouse click
+ondblclick      : Double click
+onmouseover     : Mouse enters element
+onmouseout      : Mouse leaves element
+onkeydown       : Key pressed
+onkeyup         : Key released
+onresize        : Window resized
+
+Example:
+<body onload="init()" onkeydown="handleKey(event)">
+
+--------------------------------------------------
+
+3) DEPRECATED ATTRIBUTES (HTML4 – DO NOT USE IN HTML5)
+------------------------------------------------------
+bgcolor         : Page background color
+background      : Background image
+text            : Text color
+link            : Unvisited link color
+vlink           : Visited link color
+alink           : Active link color
+
+Example (INVALID HTML5):
+<body bgcolor="black" text="white">
+
+--------------------------------------------------
+
+4) MODERN BEST PRACTICE
+--------------------------------------------------
+• Use CSS for styling
+• Use JavaScript files for logic
+• Keep <body> clean and semantic
+
+Example:
+<body class="theme-dark">
+
+==================================================
+-->
+
+
 <!-- =====================================================
      TEXT, ALIGNMENT & FORMATTING TAGS
 ===================================================== -->
@@ -50,11 +115,12 @@
     <h1 id="mainTitle">HTML COMPLETE ECET MASTER FILE</h1>
 </center>
 
-<p align="justify">
+<p align="justify"> <!---Just the align--->
     <b>Bold</b>,
     <strong>Strong</strong>,
     <i>Italic</i>,
     <em>Emphasis</em>,
+    <emp>Italic</emp>,
     <u>Underline</u>,
     <mark>Mark</mark>,
     <small>Small</small>,
@@ -65,9 +131,14 @@
     <ins>Inserted</ins>,
     H<sub>2</sub>O,
     10<sup>2</sup>
+    <center>Center</center> 
+    <code>Code</code> 
+    <ins datetime="2026-01-12" cite="editorial-update"> Updated section </ins>
 </p>
 
 <hr width="80%" size="3" color="red">
+
+
 
 <!-- ---------- KEYBOARD INPUT ---------- -->
 Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to Copy
@@ -93,9 +164,45 @@ Spaces and line breaks preserved
     Font Tag Example
 </font>
 
+<!--
+<font> TAG (Deprecated)
+
+Purpose:
+Used to change text color, size, and font face (HTML4).
+
+Attributes:
+color : Sets text color (name / hex)
+size  : Sets text size (1–7, default 3)
+face  : Sets font family
+
+Example:
+<font color="red" size="4" face="Arial">Text</font>
+
+Note:
+<font> is obsolete in HTML5.
+Use CSS instead.
+-->
+
 <marquee behavior="alternate" direction="right" scrollamount="5">
     Marquee Text Example
 </marquee>
+
+<!--
+<marquee> TAG ATTRIBUTES (Deprecated)
+
+direction : left | right | up | down
+behavior  : scroll | slide | alternate
+scrollamount : Speed of movement
+scrolldelay   : Delay between movements (ms)
+loop      : Number of repetitions
+bgcolor   : Background color
+width     : Width of marquee
+height    : Height of marquee
+
+Note:
+<marquee> is obsolete in HTML5.
+Use CSS animations instead.
+-->
 
 <hr>
 
@@ -107,12 +214,11 @@ Spaces and line breaks preserved
 
 <br><br>
 
-<img src="https://via.placeholder.com/150"
+<img src="https://en.wikipedia.org/wiki/File:Image_created_with_a_mobile_phone.png"
      alt="Sample Image"
      width="150"
      height="150"
-     border="2"
-     loading="lazy">
+     border="2">
 
 <hr>
 
@@ -121,6 +227,16 @@ Spaces and line breaks preserved
 ===================================================== -->
 
 <ul type="square">
+    <li value="1">HTML</li>
+    <li value="2">CSS</li>
+</ul>
+
+<ul type="disk<!-- default (•)-->">
+    <li value="1">HTML</li>
+    <li value="2">CSS</li>
+</ul>
+
+<ul type="circle">
     <li value="1">HTML</li>
     <li value="2">CSS</li>
 </ul>
@@ -141,7 +257,7 @@ Spaces and line breaks preserved
      TABLE WITH ATTRIBUTES
 ===================================================== -->
 
-<table border="1" cellpadding="10" cellspacing="5" width="80%" align="center">
+<table border="1" border-color="blue" cellpadding="10" cellspacing="5"<!-- height --> width="80%" align="center"<!-- left, right, center --> valign="top"<!-- top, bottom, middle -->>
     <caption align="top">Student Table</caption>
 
     <tr bgcolor="lightblue">
@@ -164,7 +280,7 @@ Spaces and line breaks preserved
      FORMS – GET & POST + FIELDSET & LEGEND
 ===================================================== -->
 
-<form method="get" onsubmit="return submitForm()" onreset="resetForm()">
+<form name="form" method="get" onsubmit="return submitForm()" onreset="resetForm()">
     <fieldset>
         <legend>GET Form</legend>
 
@@ -208,6 +324,85 @@ Spaces and line breaks preserved
 
 <hr>
 
+<form>
+  <input type="text" placeholder="Text"><br>
+  <form>
+  <textarea name="message" rows="4" cols="30" placeholder="Enter your message">
+  </textarea>
+</form>
+
+<!--
+<textarea> TAG ATTRIBUTES
+
+name        : Name used to submit data
+rows        : Number of visible text lines
+cols        : Width of textarea
+placeholder : Hint text
+maxlength   : Maximum characters allowed
+readonly    : Makes textarea read-only
+disabled    : Disables input
+required    : Mandatory field
+autofocus   : Focus on page load
+wrap        : soft | hard (text wrapping)
+
+Note:
+<textarea> is used for multi-line text input.
+-->
+  <input type="password" placeholder="Password"><br>
+  <input type="email" placeholder="Email"><br>
+  <input type="number" placeholder="Number"><br>
+  <input type="tel" placeholder="Phone"><br>
+  <input type="url" placeholder="Website"><br>
+  <input type="search" placeholder="Search"><br>
+
+  <input type="radio" name="gender"> Male
+  <input type="radio" name="gender"> Female<br>
+
+  <input type="checkbox"> Accept Terms<br>
+
+  <input type="date"><br>
+  <input type="time"><br>
+  <input type="datetime-local"><br>
+  <input type="month"><br>
+  <input type="week"><br>
+
+  <input type="color"><br>
+  <input type="range"><br>
+  <input type="file"><br>
+
+  <input type="hidden" value="123"><br>
+
+  <input type="submit" value="Submit">
+  <input type="reset">
+  <input type="button" value="Button">
+</form>
+
+<!-- <form action="submit.php" method="post">
+  <label>Username:</label>
+  <input type="text" name="username"><br>
+
+  <label>Password:</label>
+  <input type="password" name="password"><br>
+
+  <input type="submit" value="Login">
+</form>
+
+FORM TAGS
+
+<form>     : Defines the form container
+<input>    : Accepts user input
+<label>    : Label for form controls
+<textarea> : Multi-line text input
+<select>   : Drop-down list
+<option>   : Options inside select
+<button>   : Clickable button
+<fieldset> : Groups related fields
+<legend>   : Caption for fieldset
+
+Note:
+Form tags are used to collect and submit user input to the server.
+-->
+
 <!-- =====================================================
      EVENTS – MOUSE
 ===================================================== -->
@@ -220,6 +415,30 @@ Spaces and line breaks preserved
 </div>
 
 <hr>
+
+<address>
+  Written by John Doe<br>
+  Email: john@example.com<br>
+  Hyderabad, India
+</address>
+
+<!--
+<address> TAG ATTRIBUTES
+
+Global attributes supported:
+id        : Unique identifier
+class     : CSS class
+style     : Inline CSS
+title     : Tooltip text
+lang      : Language of content
+dir       : Text direction (ltr | rtl)
+hidden    : Hides the element
+
+Note:
+<address> is a semantic tag used for contact information
+(author, owner, organization). It does NOT support
+any special attributes of its own.
+-->
 
 <!-- =====================================================
      DIV & SPAN WITH ATTRIBUTES
