@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Complete ECET Program – Full Coverage</title>
+</head>
+<body>
+
+<h1>JavaScript – COMPLETE ECET Coverage (One File)</h1>
+
+<script>
+/* =====================================================
+   0. COMMENTS
+===================================================== */
+// Single-line comment
+
+/*
+   Multi-line comment
+*/
+
+/* =====================================================
+   1. ESCAPE CHARACTERS (FULL LIST)
+===================================================== */
+document.write("<h2>1. Escape Characters</h2>");
+
+document.write("Newline literal: \\n<br>");
+document.write("Rendered newline:<br>Line1\nLine2<br><br>");
+
+document.write("Tab literal: \\t<br>");
+document.write("Rendered tab: A\tB<br><br>");
+
+document.write("Backspace \\b : A\bB<br>");
+document.write("Form feed \\f : A\fB<br>");
+document.write("Carriage return \\r : Hello\rHi<br>");
+document.write("Vertical tab \\v : A\vB<br>");
+document.write("Null char \\0 : A\0B<br>");
+document.write("Single quote \\'<br>");
+document.write("Double quote \\\"<br>");
+document.write("Backslash \\\\<br>");
+
+/* =====================================================
+   2. STRINGS – ALL COMMON METHODS
+===================================================== */
+document.write("<h2>2. String Methods (ALL)</h2>");
+
+let s = "  JavaScript Programming JavaScript  ";
+
+document.write("Original: '" + s + "'<br>");
+document.write("length: " + s.length + "<br>");
+document.write("toUpperCase: " + s.toUpperCase() + "<br>");
+document.write("toLowerCase: " + s.toLowerCase() + "<br>");
+document.write("charAt(2): " + s.charAt(2) + "<br>");
+document.write("charCodeAt(2): " + s.charCodeAt(2) + "<br>");
+document.write("indexOf('Java'): " + s.indexOf("Java") + "<br>");
+document.write("lastIndexOf('Java'): " + s.lastIndexOf("Java") + "<br>");
+document.write("includes('Script'): " + s.includes("Script") + "<br>");
+document.write("startsWith('  Java'): " + s.startsWith("  Java") + "<br>");
+document.write("endsWith(' '): " + s.endsWith(" ") + "<br>");
+document.write("substring(2, 10): " + s.substring(2,10) + "<br>");
+document.write("slice(2, 10): " + s.slice(2,10) + "<br>");
+document.write("substr(2, 5) [legacy]: " + s.substr(2,5) + "<br>");
+document.write("trim(): '" + s.trim() + "'<br>");
+document.write("padStart(40,'*'): " + s.trim().padStart(40,'*') + "<br>");
+document.write("padEnd(40,'*'): " + s.trim().padEnd(40,'*') + "<br>");
+document.write("repeat(2): " + s.trim().repeat(2) + "<br>");
+document.write("replace: " + s.replace("JavaScript","JS") + "<br>");
+document.write("replace regex: " + s.replace(/JavaScript/g,"JS") + "<br>");
+document.write("search('Program'): " + s.search("Program") + "<br>");
+document.write("match(/JavaScript/g): " + s.match(/JavaScript/g) + "<br>");
+document.write("split(' '): " + s.split(" ") + "<br>");
+
+/* =====================================================
+   3. ARRAYS – FULL PREDEFINED METHODS
+===================================================== */
+document.write("<h2>3. Arrays & Methods (FULL)</h2>");
+
+let arr = [10, 20, 30, 40];
+
+document.write("Original: " + arr + "<br>");
+document.write("push: " + (arr.push(50), arr) + "<br>");
+document.write("pop: " + (arr.pop(), arr) + "<br>");
+document.write("unshift: " + (arr.unshift(5), arr) + "<br>");
+document.write("shift: " + (arr.shift(), arr) + "<br>");
+
+document.write("slice(1,3): " + arr.slice(1,3) + "<br>");
+arr.splice(1,1,99);
+document.write("splice(1,1,99): " + arr + "<br>");
+
+document.write("indexOf(99): " + arr.indexOf(99) + "<br>");
+document.write("includes(30): " + arr.includes(30) + "<br>");
+document.write("concat: " + arr.concat([60,70]) + "<br>");
+document.write("sort: " + arr.sort() + "<br>");
+document.write("reverse: " + arr.reverse() + "<br>");
+
+document.write("map(x*2): " + arr.map(x=>x*2) + "<br>");
+document.write("filter(x>20): " + arr.filter(x=>x>20) + "<br>");
+document.write("reduce(sum): " + arr.reduce((a,b)=>a+b,0) + "<br>");
+document.write("find(x>20): " + arr.find(x=>x>20) + "<br>");
+document.write("findIndex(x>20): " + arr.findIndex(x=>x>20) + "<br>");
+document.write("some(x>50): " + arr.some(x=>x>50) + "<br>");
+document.write("every(x>0): " + arr.every(x=>x>0) + "<br>");
+
+/* =====================================================
+   4. JUMPING STATEMENTS (EXPLICIT)
+===================================================== */
+document.write("<h2>4. Jumping Statements</h2>");
+
+function jumpDemo() {
+    for (let i=1;i<=5;i++) {
+        if (i==2) continue;
+        if (i==4) return "Return stopped loop at 4";
+        document.write(i + " ");
+    }
+}
+document.write(jumpDemo() + "<br>");
+
+/* =====================================================
+   5. FUNCTIONS – ALL TYPES
+===================================================== */
+document.write("<h2>5. Functions (ALL TYPES)</h2>");
+
+// Function declaration
+function add(a,b=0) { return a+b; }
+
+// Function expression
+const sub = function(a,b){ return a-b; };
+
+// Arrow function
+const mul = (a,b)=>a*b;
+
+// Rest parameters
+function sumAll(...n){ return n.reduce((a,b)=>a+b,0); }
+
+// IIFE
+(function(){ document.write("IIFE executed<br>"); })();
+
+document.write("add(5): " + add(5) + "<br>");
+document.write("sub(5,2): " + sub(5,2) + "<br>");
+document.write("mul(3,4): " + mul(3,4) + "<br>");
+document.write("sumAll(1,2,3): " + sumAll(1,2,3) + "<br>");
+
+/* =====================================================
+   6. DATE OBJECT – FULL
+===================================================== */
+document.write("<h2>6. Date Object (FULL)</h2>");
+
+let d = new Date();
+document.write("Date: " + d + "<br>");
+document.write("getDay: " + d.getDay() + "<br>");
+document.write("getHours: " + d.getHours() + "<br>");
+document.write("getMinutes: " + d.getMinutes() + "<br>");
+document.write("getSeconds: " + d.getSeconds() + "<br>");
+document.write("toISOString: " + d.toISOString() + "<br>");
+document.write("toLocaleString: " + d.toLocaleString() + "<br>");
+
+d.setFullYear(2030);
+d.setDate(15);
+document.write("Modified Date: " + d + "<br>");
+
+/* =====================================================
+   7. EVENTS – FORM, DATE, MOUSE, KEYBOARD, WINDOW
+===================================================== */
+document.write("<h2>7. Events</h2>");
+
+function log(msg){
+    document.getElementById("log").innerHTML += msg + "<br>";
+}
+
+function formSubmit(){ log("Form Submitted"); return false; }
+function formReset(){ log("Form Reset"); }
+</script>
+
+<button onclick="log('click')">Click</button>
+<button ondblclick="log('double click')">Double Click</button>
+<button onmouseover="log('mouse over')">Mouse Over</button>
+
+<br><br>
+
+<input type="text"
+       onfocus="log('focus')"
+       onblur="log('blur')"
+       oninput="log('input')"
+       onkeydown="log('key down')"
+       placeholder="Text Events">
+
+<br><br>
+
+<input type="date"
+       onfocus="log('date focus')"
+       onblur="log('date blur')"
+       onchange="log('date change')">
+
+<br><br>
+
+<form onsubmit="return formSubmit()" onreset="formReset()">
+    <input type="submit">
+    <input type="reset">
+</form>
+
+<div id="log" style="border:1px solid black;padding:10px;margin-top:10px;"></div>
+
+</body>
+</html>
